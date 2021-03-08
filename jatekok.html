@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Játékok</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stilus.css">
+    <link rel="icon" href="kepek/favicon.png" type="image/gif" sizes="16x16px">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Footer dolgok-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="footer, address, phone, icons" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+    <!--óra-->
+    <link rel="stylesheet" type="text/css" href="clock_style.css">
+    <script type="text/javascript">
+        window.onload = setInterval(clock, 1000);
+
+        function clock() {
+            var d = new Date();
+
+            var date = d.getDate();
+
+            var month = d.getMonth();
+            var montharr = ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "Decembeer"];
+            month = montharr[month];
+
+            var year = d.getFullYear();
+
+            var day = d.getDay();
+            var dayarr = ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"];
+            day = dayarr[day];
+
+            var hour = d.getHours();
+            var min = d.getMinutes();
+            var sec = d.getSeconds();
+
+            document.getElementById("date").innerHTML = year + " " + month + " " + date + " " + day + " ";
+            document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+        }
+    </script>
+</head>
+
+<body>
+    <!--header-->
+    <header>
+        <div class="flex">
+            <div class="logo">
+                <img src="kepek/game1.ico" alt="Game logo">
+            </div>
+
+
+
+            <nav>
+                <button id="nav-toggle" class="hamburger-menu">
+                    <span class="strip"></span>
+                    <span class="strip"></span>
+                    <span class="strip"></span>
+                </button>
+
+                <ul id="nav-menu-container">
+                    <li><a href="index.html">Főoldal</a></li>
+                    <li><a class="active" href="jatekok.html">Játékok</a></li>
+                    <li><a href="ingyenesJatek.html">Ingyenes játékok</a></li>
+                    <li><a href="https://levaiviktoria.github.io/HARDVERSHOP/" target="_blank">Hardvershop</a></li>
+                    <li><a href="#elerhetoseg">Elérhetőség</a></li>
+                </ul>
+
+
+
+            </nav>
+            <a href="login.html" id="login-register-button">Login / Register</a>
+        </div>
+
+    </header>
+
+    <!--Főrész-->
+    <main>
+
+        <section id="tournaments">
+            <h1 class="ml1">
+                <span class="text-wrapper">
+                    <span class="line line1"></span>
+                    <span class="letters">Játékok</span>
+                    <span class="line line2"></span>
+                </span>
+            </h1>
+            <!--Mozgó szöveg-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+            <script>
+                // Wrap every letter in a span
+                var textWrapper = document.querySelector('.ml1 .letters');
+                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                anime.timeline({ loop: true })
+                    .add({
+                        targets: '.ml1 .letter',
+                        scale: [0.3, 1],
+                        opacity: [0, 1],
+                        translateZ: 0,
+                        easing: "easeOutExpo",
+                        duration: 600,
+                        delay: (el, i) => 70 * (i + 1)
+                    }).add({
+                        targets: '.ml1 .line',
+                        scaleX: [0, 1],
+                        opacity: [0.5, 1],
+                        easing: "easeOutExpo",
+                        duration: 700,
+                        offset: '-=875',
+                        delay: (el, i, l) => 80 * (l - i)
+                    }).add({
+                        targets: '.ml1',
+                        opacity: 0,
+                        duration: 1000,
+                        easing: "easeOutExpo",
+                        delay: 1000
+                    });
+            </script>
+
+            <!--1 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/892970/Valheim/" title="Valheim"
+                            target="_blank"><img src="games/valheim.png"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Valheim</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2021. február 2.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Iron Gate AB</strong></div>
+                        <div><label>Motor:</label> <strong>Unity</strong></div>
+                        <div><label>Kiadók: </label> <strong>Coffee Stain Studios, Coffee Stain Publishing</strong>
+                        </div>
+                        <div><label>Műfajok: </label> <strong>Túlélőjáték, Szerepjáték, Indie játék, Kalandjáték,
+                                Verekedős játék, Early Access</strong></div>
+                        <div><label>Platformok: </label> <strong> Linux, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong> Egyjátékos mód, Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>16,79€</label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/" title="GTA V"
+                            target="_blank"><img src="games/gta.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Grand Theft Auto V</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2013. szeptember 17.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> Rockstar North</strong></div>
+                        <div><label>Motor:</label> <strong> RAGE</strong></div>
+                        <div><label>Kiadó: </label> <strong>Rockstar Games</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció-kaland, third-person shooter</strong></div>
+                        <div><label>Platformok: </label> <strong> PlayStation 3, Xbox 360, Xbox One, PlayStation 4,
+                                PlayStation 5, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong> Egyjátékos mód, Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>29,98€</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--2 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://us.shop.battle.net/en-us/product/overwatch?blzcmp=ow_buy_header"
+                            title="Overwatch" target="_blank"><img src="games/ow.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Overwatch</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2015. október 27.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> Blizzard Entertainment</strong></div>
+                        <div><label>Kiadó: </label> <strong>Blizzard Entertainment</strong></div>
+                        <div><label>Műfajok: </label> <strong>Belső nézetes lövölde</strong></div>
+                        <div><label>Platformok: </label> <strong>PlayStation 4, Nintendo Switch, Xbox One,
+                                Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>Legendary Edition: 39.99$</label></div>
+                        <div><label class="prizes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <label>Standard
+                                Edition: 19.99$</label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/739630/Phasmophobia/" title="Phasmophobia"
+                            target="_blank"><img src="games/Phasmophobia.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Phasmophobia</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2020. szeptember 18.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> Kinetic Games</strong></div>
+                        <div><label>Motor:</label> <strong> Unity</strong></div>
+                        <div><label>Kiadó: </label> <strong>Kinetic Games</strong></div>
+                        <div><label>Műfajok: </label> <strong>Horror, túlélőhorror</strong></div>
+                        <div><label>Platformok: </label> <strong>Windows 10</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>11,59€ </label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--3 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/" title="Cyberpunk 2077"
+                            target="_blank"><img src="games/cyberpunk-2077.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Cyberpunk 2077</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2020. szeptember 17.</strong></div>
+                        <div><label>Fejlesztők:</label> <strong>CD Projekt, CD Projekt RED</strong></div>
+                        <div><label>Motor:</label> <strong>REDengine 4</strong></div>
+                        <div><label>Kiadó: </label> <strong>CD Projekt</strong></div>
+                        <div><label>Műfajok: </label> <strong>Túlélőjáték, Szerepjáték, Indie játék, Kalandjáték,
+                                Verekedős játék, Early Access</strong></div>
+                        <div><label>Platformok: </label> <strong>PlayStation 4, Google Stadia, PlayStation 5, Xbox One,
+                                Xbox Series X|S, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>59,99€ </label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/1172620/Sea_of_Thieves/" title="Sea of Thieves"
+                            target="_blank"><img src="games/Sea_of_thieves.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Sea of Thieves</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2017. április 20.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Rare</strong></div>
+                        <div><label>Motor:</label> <strong>Unreal Engine 4</strong></div>
+                        <div><label>Kiadó: </label> <strong>Xbox Game Studios</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Kaland</strong></div>
+                        <div><label>Platformok: </label> <strong>Xbox One, Windows, Xbox Series X|S</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>39,99€ </label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--4 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/397540/Borderlands_3/" title="Borderlands 3"
+                            target="_blank"><img src="games/borderlands.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Borderlands 3</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2019. szeptember 13.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Gearbox Software, Gearbox Studio Québec</strong></div>
+                        <div><label>Motor:</label> <strong> Unreal Engine 4</strong></div>
+                        <div><label>Kiadók: </label> <strong>2K</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Szerepjáték</strong></div>
+                        <div><label>Platformok: </label> <strong>PlayStation 4, Xbox One, PlayStation 5, Xbox Series
+                                X|S, Google Stadia, Windows, Mac OS</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód, Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>59,99€</label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/346110/ARK_Survival_Evolved/"
+                            title="ARK: Survival Evolved" target="_blank"><img src="games/ark.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>ARK: Survival Evolved</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2015. június 2.</strong></div>
+                        <div><label>Fejlesztők:</label> <strong>Studio Wildcard, Virtual Basement, Efecto Studios,
+                                Instinct Games, Abstraction, Instinct Games S.A.E.</strong></div>
+                        <div><label>Motor:</label> <strong>Unreal Engine 4</strong></div>
+                        <div><label>Kiadó: </label> <strong>Studio Wildcard</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Kaland, Indie, Sokszereplős többjátékos,
+                                Szerepjáték</strong></div>
+                        <div><label>Platformok: </label> <strong>PlayStation 4, Xbox One, Nintendo Switch, Xbox Series X|S, Android, Windows, Linux, Mac OS, Classic Mac OS</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód, Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>54,99€ </label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--5 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/"
+                            title="Counter-Strike: Global Offensive" target="_blank"><img src="games/csgo.jpeg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Counter-Strike: Global Offensive</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong> 2012. augusztus 21.</strong></div>
+                        <div><label>Fejlesztők:</label> <strong> Valve, Hidden Path Entertainment </strong></div>
+                        <div><label>Motor:</label> <strong>Source Engine</strong></div>
+                        <div><label>Kiadó: </label> <strong>Valve</strong></div>
+                        <div><label>Műfajok: </label> <strong>First-person shooter</strong></div>
+                        <div><label>Platformok: </label> <strong>Windows, OS X, PlayStation 3, Xbox 360, Linux</strong>
+                        </div>
+                        <div><label>Játékmódok: </label> <strong>Többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>Prime: 12,75€</label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/10/CounterStrike/" title="Counter-Strike"
+                            target="_blank"><img src="games/cs1.6.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Counter-Strike 1.6</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2000. november 9.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> Valve Software</strong></div>
+                        <div><label>Motor:</label> <strong> GoldSrc (Half-Life)</strong></div>
+                        <div><label>Kiadó: </label> <strong> Valve</strong></div>
+                        <div><label>Műfajok: </label> <strong> taktikai lövölde, belső nézetes lövölde</strong></div>
+                        <div><label>Platformok: </label> <strong>Microsoft Windows, Xbox, OS X, Linux</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>8,19€ </label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--6 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/945360/Among_Us/" title="Among Us"
+                            target="_blank"><img src="games/among us.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Among Us</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong> 2018. június 15.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> InnerSloth LLC</strong></div>
+                        <div><label>Motor:</label> <strong>Unity</strong></div>
+                        <div><label>Kiadó: </label> <strong>InnerSloth LLC</strong></div>
+                        <div><label>Műfajok: </label> <strong>Könnyed, dedukció</strong></div>
+                        <div><label>Platformok: </label> <strong>Nintendo Switch, iOS, Windows, Android, Xbox
+                                One</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>3,99€</label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/381210/Dead_by_Daylight/" title="Dead by Daylight"
+                            target="_blank"><img src="games/Dead by Daylight.jpeg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Dead by Daylight</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2016. június 14.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> Behaviour Interactive</strong></div>
+                        <div><label>Motor:</label> <strong>Unreal Engine 4</strong></div>
+                        <div><label>Kiadó: </label> <strong>Behaviour Interactive Inc. </strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció</strong></div>
+                        <div><label>Platformok: </label> <strong>PlayStation 4, Xbox One, Nintendo Switch, Android, Google Stadia, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>19,99€</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--7 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/1313860/EA_SPORTS_FIFA_21/" title="FIFA 21"
+                            target="_blank"><img src="games/fifa21.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>FIFA 21</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2020. október 5.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Electronic Arts, EA Vancouver, EA Bucharest</strong></div>
+                        <div><label>Motor:</label> <strong>Frostbite 3</strong></div>
+                        <div><label>Kiadó: </label> <strong> Electronic Arts</strong></div>
+                        <div><label>Műfajok: </label> <strong>Szimuláció, Sport</strong></div>
+                        <div><label>Platformok: </label> <strong>PlayStation 4, Nintendo Switch, PlayStation 5, Xbox One, Xbox Series X|S, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong> Egyjátékos mód, Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>59,99€</label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/1238810/Battlefield_V/" title="Battlefield V" target="_blank"><img
+                                src="games/Battlefield V.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Battlefield V</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2018. szeptember 4.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>DICE</strong></div>
+                        <div><label>Motor:</label> <strong>Frostbite</strong></div>
+                        <div><label>Kiadó: </label> <strong>Electronic Arts	</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció</strong></div>
+                        <div><label>Platformok: </label> <strong> PlayStation 4, Xbox One, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód, Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>59,99€ </label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--8 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/400/Portal/" title="Portal"
+                            target="_blank"><img src="games/portal.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Portal</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2007. október 10.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>	Valve</strong></div>
+                        <div><label>Motor:</label> <strong>Source Engine</strong></div>
+                        <div><label>Kiadók: </label> <strong>Valve Corporation, Microsoft Game Studios</strong></div>
+                        <div><label>Műfajok: </label> <strong>Logikai platformjáték</strong></div>
+                        <div><label>Platformok: </label> <strong>Microsoft Windows, Mac OS X, PlayStation 3, Xbox 360, Linux</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label> 8,19€</label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/620/Portal_2/" title="Portal 2" target="_blank"><img
+                                src="games/Portal2.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Portal 2</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2011. április 18.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Valve Corporation</strong></div>
+                        <div><label>Motor:</label> <strong>Source Engine</strong></div>
+                        <div><label>Kiadó: </label> <strong>Valve Corporation</strong></div>
+                        <div><label>Műfajok: </label> <strong>	Logikai platformjáték</strong></div>
+                        <div><label>Platformok: </label> <strong>Linux, Microsoft Windows, Mac OS X, PlayStation 3, Xbox 360</strong></div>
+                        <div><label>Játékmódok: </label> <strong>	Egyjátékos, többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>8,19€ </label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--9 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/550/Left_4_Dead_2/" title="Left 4 Dead 2"
+                            target="_blank"><img src="games/left4dead2.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Left 4 Dead 2</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2009. november 17.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Valve Corporation</strong></div>
+                        <div><label>Motor:</label> <strong>Source Engine</strong></div>
+                        <div><label>Kiadók: </label> <strong>	Valve Corporation</strong></div>
+                        <div><label>Műfajok: </label> <strong>	akció/horror</strong></div>
+                        <div><label>Platformok: </label> <strong>	Microsoft Windows 2000, Windows XP, Windows Vista, Windows 7, Xbox 360</strong></div>
+                        <div><label>Játékmódok: </label> <strong>egyjátékos, többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>8,19€ </label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/381210/Dead_by_Daylight/" title="Dead by Daylight" target="_blank"><img
+                                src="games/Dead by Daylight.jpeg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Dead by Daylight</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2016. június 14.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Behaviour Interactive</strong></div>
+                        <div><label>Motor:</label> <strong> Unreal Engine 4</strong></div>
+                        <div><label>Kiadó: </label> <strong>Behaviour Interactive Inc.</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció</strong></div>
+                        <div><label>Platformok: </label> <strong>PlayStation 4, Xbox One, Nintendo Switch, Google Stadia, Android, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>19,99€ </label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--10 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/470220/UNO/" title="uno"
+                            target="_blank"><img src="games/uno.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>UNO</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2016. dec. 8.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Ubisoft Entertainment</strong></div>
+                        <div><label>Motor:</label> <strong>Unity (Ubisoft Version)</strong></div>
+                        <div><label>Kiadók: </label> <strong>Ubisoft Entertainment	</strong></div>
+                        <div><label>Műfajok: </label> <strong> Könnyed</strong></div>
+                        <div><label>Platformok: </label> <strong>Xbox 360, WiiWare, DSiWare, PlayStation 3, PlayStation Portable, iPod, iPhone OS, Symbian^3, Android, Xbox One, PlayStation 4, Nintendo Switch, Microsoft Windows, Stadia</strong></div>
+                        <div><label>Játékmódok: </label> <strong>egyjátékos, többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>9,99€</label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/221100/DayZ/" title="DayZ" target="_blank"><img
+                                src="games/DayZ.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>DayZ</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2013. december 16.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> Bohemia Interactive, Dean Hall</strong></div>
+                        <div><label>Motor:</label> <strong>Real Virtuality</strong></div>
+                        <div><label>Kiadó: </label> <strong>Bohemia Interactive</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Kaland, Sokszereplős többjátékos</strong></div>
+                        <div><label>Platformok: </label> <strong> PlayStation 4, Xbox One, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>39,99€</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--11 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/578080/PLAYERUNKNOWNS_BATTLEGROUNDS/" title="PLAYERUNKNOWN'S BATTLEGROUNDS"
+                            target="_blank"><img src="games/pubg.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>PLAYERUNKNOWN'S BATTLEGROUNDS</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2016. július 30.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>PUBG Corporation, Krafton, xFAIRx</strong></div>
+                        <div><label>Motor:</label> <strong>Unreal Engine 4</strong></div>
+                        <div><label>Kiadók: </label> <strong>KRAFTON, Inc.	</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Kaland, Sokszereplős többjátékos</strong></div>
+                        <div><label>Platformok: </label> <strong>Android, PlayStation 4, Google Stadia, Windows, Xbox One</strong></div>
+                        <div><label>Játékmódok: </label> <strong>többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>29,99€ </label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/812140/Assassins_Creed_Odyssey/" title="Assassin's Creed® Odyssey" target="_blank"><img
+                                src="games/assasin.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Assassin's Creed® Odyssey</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2018. október 2.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Ubisoft Quebec, Ubisoft Montreal, Ubisoft Bucharest, Ubisoft Singapore, Ubisoft Montpellier, Ubisoft Kiev, Ubisoft Shanghai	</strong></div>
+                        <div><label>Motor:</label> <strong>AnvilNext 2.0</strong></div>
+                        <div><label>Kiadó: </label> <strong>Ubisoft</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Kaland, Szerepjáték</strong></div>
+                        <div><label>Platformok: </label> <strong>PlayStation 4, Xbox One, Nintendo Switch, Google Stadia, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>	egyjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>59,99€</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--12 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://www.minecraft.net/en-us/store/minecraft-windows10" title="Minecraft"
+                            target="_blank"><img src="games/minecraft.png"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Minecraft</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2016. dec. 8.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>	Mojang Studios</strong></div>
+                        <div><label>Motor:</label> <strong>Java </strong></div>
+                        <div><label>Kiadók: </label> <strong>Mojang Studios, Xbox Game Studios, Sony Interactive Entertainment</strong></div>
+                        <div><label>Műfajok: </label> <strong>	túlélő, sandbox</strong></div>
+                        <div><label>Platformok: </label> <strong>Windows, macOS, Linux</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos, Többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>Starter Collection: $29.99</label></div>
+                        <div><label class="prizes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <label>Master Collection: $49.99</label></div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/1222670/The_Sims_4/" title="The Sims™ 4" target="_blank"><img
+                                src="games/sims4.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>The Sims™ 4</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2014. szeptember 2.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>    Maxis, The Sims Studio</strong></div>
+                        <div><label>Motor:</label> <strong>Real Virtuality</strong></div>
+                        <div><label>Kiadó: </label> <strong>	Electronic Arts</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Kaland, Sokszereplős többjátékos</strong></div>
+                        <div><label>Platformok: </label> <strong> PlayStation 4, Xbox One, Windows, Mac OS, Classic Mac OS</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>39,99€ </label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--13 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/322330/Dont_Starve_Together/" title="Don't Starve Together"
+                            target="_blank"><img src="games/Don't Starve Together.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Don't Starve Together</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2016. dec. 8.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Klei Entertainment</strong></div>
+                        <div><label>Motor:</label> <strong>Lua</strong></div>
+                        <div><label>Kiadók: </label> <strong> Klei Entertainment	</strong></div>
+                        <div><label>Műfajok: </label> <strong> Túlélőjáték, Indie játék, Akció-kalandjáték, Adventure, Simulation</strong></div>
+                        <div><label>Platformok: </label> <strong> PlayStation 4, Xbox One, macOS, Linux, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>egyjátékos, többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>14,99€ </label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/334230/Town_of_Salem/" title="Town of Salem" target="_blank"><img
+                                src="games/town of salem.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Town of Salem</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2014. dec. 15.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> BlankMediaGames</strong></div>
+                        <div><label>Motor:</label> <strong>Adobe Flash, Unity</strong></div>
+                        <div><label>Kiadó: </label> <strong>BlankMediaGames</strong></div>
+                        <div><label>Műfajok: </label> <strong>Stratégiai játék, Indie játék, MMORPG, Social deduction game, Strategy</strong></div>
+                        <div><label>Platformok: </label> <strong> Webböngésző, Android, iOS, Adobe Flash Player, Windows, Mac OS</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>5,99€</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--14 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/" title="Tom Clancy's Rainbow Six® Siege"
+                            target="_blank"><img src="games/r6.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Tom Clancy's Rainbow Six® Siege</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2015. április 7.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Ubisoft Montreal</strong></div>
+                        <div><label>Motor:</label> <strong>Anvil</strong></div>
+                        <div><label>Kiadók: </label> <strong>Ubisoft	</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció</strong></div>
+                        <div><label>Platformok: </label> <strong> PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód, Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>19,99€</label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/546560/HalfLife_Alyx/" title="Half-Life: Alyx" target="_blank"><img
+                                src="games/Half-Life_Alyx.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Half-Life: Alyx</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2020. március 23.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> Valve Corporation</strong></div>
+                        <div><label>Motor:</label> <strong>Source 2</strong></div>
+                        <div><label>Kiadó: </label> <strong>Valve</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Kaland</strong></div>
+                        <div><label>Platformok: </label> <strong> Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>49,99€</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--15 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://eu.shop.battle.net/en-us/product/world-of-warcraft-shadowlands?utm_source=worldofwarcraft.com&utm_campaign=bop-wow-global-shadowlands&utm_medium=internal&utm_content=hp-masthead" title="World of Warcraft"
+                            target="_blank"><img src="games/WoW.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>World of Warcraft</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong> 2004. november 23.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>	Blizzard Entertainment</strong></div>
+                        <div><label>Motor:</label> <strong>	Saját fejlesztésű</strong></div>
+                        <div><label>Kiadók: </label> <strong>	Vivendi Universal, Activision Blizzard	</strong></div>
+                        <div><label>Műfajok: </label> <strong> Online szerepjáték</strong></div>
+                        <div><label>Platformok: </label> <strong>Windows XP/Vista/7/8/8.1/10, Mac OS X 10.7.x és újabb </strong></div>
+                        <div><label>Játékmódok: </label> <strong>MMORPG</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>Base Edition: 39.99€</label></div>
+                        <div><label class="prizes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <label>Heroic Edition: 54.99€</label></div>
+                        <div><label class="prizes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <label>Epic Edition: 74.99€</label></div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/" title="The Witcher 3: Wild Hunt" target="_blank"><img
+                                src="games/witcher.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>The Witcher® 3: Wild Hunt</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2015. május 18.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>	CD Projekt RED</strong></div>
+                        <div><label>Motor:</label> <strong>	REDengine, PhysX, SpeedTree</strong></div>
+                        <div><label>Kiadó: </label> <strong>CD Projekt RED</strong></div>
+                        <div><label>Műfajok: </label> <strong>akció-szerepjáték, videójáték LMBT karakterrel</strong></div>
+                        <div><label>Platformok: </label> <strong> Microsoft Windows, Xbox One, PlayStation 4, Nintendo Switch, PlayStation 5, Xbox Series X és Series S </strong></div>
+                        <div><label>Játékmódok: </label> <strong>	Egyjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>29,99€ </label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--16 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/" title="Euro Truck Simulator 2"
+                            target="_blank"><img src="games/Euro Truck Simulator 2.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Euro Truck Simulator 2</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2012. október 19.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>SCS Software</strong></div>
+                        <div><label>Motor:</label> <strong>Prism3D</strong></div>
+                        <div><label>Kiadók: </label> <strong>	SCS Software	</strong></div>
+                        <div><label>Műfajok: </label> <strong>	teherautó-szimulátor</strong></div>
+                        <div><label>Platformok: </label> <strong> Windows, Linux, macOS</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos, Többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>19,99€</label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/1222680/Need_for_Speed_Heat/" title="Need for Speed™ Heat" target="_blank"><img
+                                src="games/need-for-speed-heat.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Need for Speed™ Heat</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2019. november 8.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> EA Gothenburg</strong></div>
+                        <div><label>Motor:</label> <strong>Frostbite</strong></div>
+                        <div><label>Kiadó: </label> <strong>Electronic Arts</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Kaland, Verseny, Sport</strong></div>
+                        <div><label>Platformok: </label> <strong>  PlayStation 4, Xbox One, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód, Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>69,99€ </label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--17 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/" title="Red Dead Redemption 2"
+                            target="_blank"><img src="games/red dead redemption2.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Red Dead Redemption 2</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2018. október 26.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Rockstar Games</strong></div>
+                        <div><label>Motor:</label> <strong>Rockstar Advanced Game Engine</strong></div>
+                        <div><label>Kiadók: </label> <strong>Rockstar Games</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Kaland</strong></div>
+                        <div><label>Platformok: </label> <strong> PlayStation 4, Xbox One, Google Stadia, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos, Többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>59,99€ </label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/787860/Farming_Simulator_19/" title="Farming Simulator 19" target="_blank"><img
+                                src="games/farming simulator.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Farming Simulator 19</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2018. november 19.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>GIANTS Software</strong></div>
+                        <div><label>Kiadó: </label> <strong>GIANTS Software, Focus Home Interactive</strong></div>
+                        <div><label>Műfajok: </label> <strong>Szimulátorjáték, Stratégiai játék, Simulation</strong></div>
+                        <div><label>Platformok: </label> <strong> PlayStation 4, Xbox One, macOS, Windows, Google Stadia, Mac OS</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos, Többjátékos</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>19,99€</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--18 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/860510/Little_Nightmares_II/" title="Little Nightmares II"
+                            target="_blank"><img src="games/Little_Nightmares.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Little Nightmares II</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2020. december 9.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Tarsier Studios, Supermassive Games</strong></div>
+                        <div><label>Motor:</label> <strong>Unreal Engine 4</strong></div>
+                        <div><label>Kiadók: </label> <strong>Bandai Namco Games, Namco Bandai Games America Inc.</strong></div>
+                        <div><label>Műfajok: </label> <strong>Kaland</strong></div>
+                        <div><label>Platformok: </label> <strong>PlayStation 4, Nintendo Switch, Xbox One, PlayStation 5, Xbox Series X|S, Google Stadia, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>29,99€ </label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://hitman.com/global/" title="Hitman 3" target="_blank"><img
+                                src="games/Hitman_3.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Hitman 3</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2021. január 20.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> IO Interactive</strong></div>
+                        <div><label>Kiadó: </label> <strong>IO Interactive</strong></div>
+                        <div><label>Műfajok: </label> <strong>	Stealth</strong></div>
+                        <div><label>Platformok: </label> <strong> PlayStation 4, PlayStation 5, Nintendo Switch, Xbox One, Xbox Series X|S, Windows, Google Stadia</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>HUF 20,900.00</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--19 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/242760/The_Forest/" title="The Forest"
+                            target="_blank"><img src="games/the forest.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>The Forest</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2014. május 30.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Endnight Games Ltd</strong></div>
+                        <div><label>Motor:</label> <strong>	Unity</strong></div>
+                        <div><label>Kiadók: </label> <strong>Endnight Games Ltd	</strong></div>
+                        <div><label>Műfajok: </label> <strong>Túlélő horror</strong></div>
+                        <div><label>Platformok: </label> <strong> 	Microsoft Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>egyjátékos videójáték, többjátékos videójáték, co-op mode</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>16,79€</label></div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/1237950/STAR_WARS_Battlefront_II/" title="STAR WARS™ Battlefront™ II" target="_blank"><img
+                                src="games/STAR WARS™ Battlefront™ II.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>STAR WARS™ Battlefront™ II</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2017. november 17.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> DICE</strong></div>
+                        <div><label>Motor:</label> <strong>Frostbite</strong></div>
+                        <div><label>Kiadó: </label> <strong>Electronic Arts	</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Kaland</strong></div>
+                        <div><label>Platformok: </label> <strong> PlayStation 4, Xbox One, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód; Sokszereplős online játék</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>39,99€ </label></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--20 sor-->
+            <div class="flex">
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/" title="Tom Clancy's Rainbow Six® Siege"
+                            target="_blank"><img src="games/r6.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Tom Clancy's Rainbow Six® Siege</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2015. április 7.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong>Ubisoft Montreal</strong></div>
+                        <div><label>Motor:</label> <strong>Anvil</strong></div>
+                        <div><label>Kiadók: </label> <strong>Ubisoft	</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció</strong></div>
+                        <div><label>Platformok: </label> <strong> PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S, Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód, Többjátékos videójáték</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>19,99€</label></div>
+
+                    </div>
+                </div>
+
+                <div class="box">
+                    <span class="badge premium-tournament">Videójáték</span>
+                    <div class="tournaments-image">
+                        <a href="https://store.steampowered.com/app/546560/HalfLife_Alyx/" title="Half-Life: Alyx" target="_blank"><img
+                                src="games/Half-Life_Alyx.jpg"></a>
+                    </div>
+                    <div class="tournaments-content">
+                        <h3>Half-Life: Alyx</h3>
+                        <div><label>Első verzió kiadásának dátuma: </label> <strong>2020. március 23.</strong></div>
+                        <div><label>Fejlesztő:</label> <strong> Valve Corporation</strong></div>
+                        <div><label>Motor:</label> <strong>Source 2</strong></div>
+                        <div><label>Kiadó: </label> <strong>Valve</strong></div>
+                        <div><label>Műfajok: </label> <strong>Akció, Kaland</strong></div>
+                        <div><label>Platformok: </label> <strong> Windows</strong></div>
+                        <div><label>Játékmódok: </label> <strong>Egyjátékos mód</strong></div>
+                        <div><label class="prizes">Ára:</label> <label>49,99€</label></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+       <!--Footer-->
+    <footer id="elerhetoseg" class="footer-distributed">
+
+        <div class="footer-left">
+            <div class="logo">
+                <img src="kepek/game1.ico" alt="Game logo">
+            </div>
+
+            <p class="footer-links">
+                <a href="index.html">Főoldal</a>
+                ·
+                <a href="jatekok.html">Játékok</a>
+                ·
+                <a href="ingyenesJatek.html">Ingyenes játékok</a>
+                ·
+                <a href="https://levaiviktoria.github.io/HARDVERSHOP/">Hardvershop</a>
+                ·
+                <a href="#elerhetoseg">Elérhetőségek</a>
+            </p>
+
+            <p class="footer-company-name">Lévai Viktória &copy; 2021</p>
+
+            <!--Óra-->
+            <div id="DigitalCLOCK" class="clock" onload="showTime()"></div>
+            <p id="date"></p>
+            <p id="time"></p>
+
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Valami utca 12.</span> Magyarország</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+3620 457 4127</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">pcgames@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>További elérhetőségek</span>
+                
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="https://github.com/LevaiViktoria" target="_blank"><i class="fa fa-github"></i></a>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('nav-toggle').addEventListener('click', function () {
+            let navMenu = document.getElementById('nav-menu-container');
+            navMenu.style.display = navMenu.offsetParent === null ? 'block' : 'none';
+        });
+    </script>
+</body>
+
+</html>
